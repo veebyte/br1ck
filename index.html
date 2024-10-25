@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR1CK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BR1CK</h1>
+        <h2><em><a href="https://discord.gg/Pb6qUkacpj">By Copernicium <small>(Click me!)</small></a></em></h2>
+    </header>
+
+    <main>
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <p>The exploit works because of an issue CR50s have when enrolling. If you reset it at just the right time, it will corrupt data in the FWMP TPM space, resulting in a bricked FWMP. This allows us to boot into shimmer with <span class="highlight">CTRL + U</span> and clear FWMP for when we fix the brick.</p>
+        </section>
+
+        <section id="how-i-found-it">
+            <h2>How I Found It</h2>
+            <p>While trying to do CRSH2TTY, I ended up bricking my device multiple times (a total of four). One time, I randomly tried to disable write protection while unbricking with a SuzyQ, and surprisingly, it worked!<br>
+            <small>All of my exploits have been made due to CRSH2TTY in some way.</small></p>
+        </section>
+
+        <section id="how-to-do-it">
+            <h2>How to Do It</h2>
+            <p>
+                1. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
+                2. Upload the file to the form below and remember the time it gives you.<br>
+                3. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
+                4. Get a stopwatch ready. When you're at the correct time, perform an EC-Reset by holding <span class="highlight">Esc + Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
+                5. Reboot (<span class="highlight">Refresh + Power</span>). If you're still in recovery mode, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it.<br>
+                6. Boot a shim with <span class="highlight">CTRL + U</span> and run deprovision.<br>
+                7. In shimmer, open a bash terminal and run <span class="highlight">gsctool -a -o</span>.<br>
+                8. At the end of this process, you should reboot unenrolled and unbricked.
+            </p>
+        </section>
+
+        <section id="help-form">
+            <h2>Check Reset Times</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" id="file-upload" name="file-upload" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Credits:</h3>
+        <p>
+            <strong><a href="https://discord.com/users/758049822409228348">Byte</a></strong> - Pioneering the development of this<br>
+            <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Figuring out when the timings were and providing a lot of information (probably wouldn't be released without him)<br>
+            <strong><a href="https://discord.com/users/828015910127271986">Silk</a></strong> - Reproducing the bug first and confirming I wasn't insane<br>
+            <strong><a href="https://discord.com/users/1113978877010788432">Kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡
+        </p>
+    </footer>
+</body>
+</html>

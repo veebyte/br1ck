@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,500;1,14..32,500&display=swap');
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header {
+    background: #191919;
+    color: #e0e0e0;
+    padding: 2vw 0;
+    text-align: center;
+    font-family: "Inter";
+}
+
+header h1 {
+    margin: -2.7vw;
+    margin-bottom: -1.7vw;
+    font-size: 5.25vw;
+}
+
+header h2 {
+    margin: -1.5vw 0;
+    font-size: 1vw;
+    font-family: "Inter";
+}
+
+header h2 em {
+    font-style: italic;
+}
+
+header a {
+    color: #6250ff;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #7464ff;
+}
+
+main {
+    padding: 2vw;
+}
+
+section {
+    background: #191919;
+    margin: 1vw 0;
+    margin-top: -4px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #6250ff;
+    margin-top: 0;
+}
+
+.highlight {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5vw;
+    font-size: 15px;
+}
+
+form input[type="file"] {
+    margin-bottom: 1.5vw;
+}
+
+form button {
+    padding: 0.5vw 1vw;
+    background: #5b1af3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    width: 100px;
+}
+
+form button:hover {
+    background: #5014db;
+}
+
+footer {
+    text-align: center;
+    padding: 2vw 0;
+    background: #1f1f1f;
+    color: #e0e0e0;
+    font-size: 13px;
+}
+
+footer h3 {
+    margin: -15px;
+    font-size: 30px;
+}
+
+footer a:link,
+footer a:visited {
+    color: #e0e0e0;
+}
+
+footer a:hover {
+    color: #ac79ff;
+}
+
+br {
+    margin: 2px;
+}
+
+small {
+    font-size: .5vw
+}
