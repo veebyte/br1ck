@@ -3,12 +3,12 @@
 body {
     font-family: "Inter", Arial, sans-serif;
     line-height: 1.6;
-    background-color: #1b1b1b;
+    background-color: #1d1d1d;
     color: #e0e0e0;
     overflow-x: hidden;
 }
 section {
-    background-color: #161616 ;
+    background-color: #141414 ;
     margin-bottom: -.1vh;
 }
 
@@ -94,7 +94,7 @@ form input[type="file"] {
     margin-bottom: 1.5vw;
 }
 
-form button {
+#submit {
     padding: 0.5vw 1vw;
     background: #5b1af3;
     color: white;
@@ -105,7 +105,7 @@ form button {
     width: 100px;
 }
 
-form button:hover {
+#submit:hover {
     background: #5014db;
 }
 
@@ -140,12 +140,18 @@ br {
 small {
     font-size: .9vh;
 }
-
-#submit:hover {
-    background-color: #4612be;
-}
-
 #text_input {
     width: 8vw;
     margin-top: -1vw;
 }
+
+#reset-text { 
+    display: none
+}
+
+
+@keyframes glow {
+    25% {text-shadow: 0 0 20px #fff, 0 0 30px #7814bb, 0 0 40px #7814bb, 0 0 50px #7814bb, 0 0 60px #7814bb, 0 0 70px #7814bb, 0 0 80px #7814bb;}
+    75% {text-shadow: 0 0 20px #fff, 0 0 30px #631a72, 0 0 40px #631a72, 0 0 50px #631a72, 0 0 60px #631a72, 0 0 70px #631a72, 0 0 80px #631a72;}
+    100% {}
+  }
