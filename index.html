@@ -43,10 +43,8 @@
             3. Place the file in <span class="highlight">combined-logs/var/log/chrome/</span> into the file uploader<br>
             4. Click submit and it should show an alert with the reset times <br>
         </p>
-            <form action="/upload" method="post" enctype="multipart/form-data"> <!-- forms are weird -->
                 <input type="file" id="file_uploader" name="file_uploader" required>
                 <button type="button" id="submit" onclick="findTime(file_uploader.files[0])">Submit</button>
-            </form>
             <p><span style="color: #ed8796;">Please report bugs to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span></p>
         </section>
         <br>
