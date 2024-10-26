@@ -9,52 +9,62 @@
 <body>
     <header>
         <h1>BR1CK</h1>
-        <h2><em><a href="https://discord.gg/Pb6qUkacpj">By Copernicium <small>(Click me!)</small></a></em></h2>
+        <h2 id="join-button"><em><a href="https://discord.gg/Pb6qUkacpj">By Copernicium <small>(Click me!)</small></a></em></h2>
     </header>
 
     <main>
-        <section id="how-it-works">
+        <section> <!-- are IDS really necessary? I don't think javascript would need to target these elements-->
             <h2>How It Works</h2>
-            <p>The exploit works because of an issue CR50s have when enrolling. If you reset it at just the right time, it will corrupt data in the FWMP TPM space, resulting in a bricked FWMP. This allows us to boot into shimmer with <span class="highlight">CTRL + U</span> and clear FWMP for when we fix the brick.</p>
+            <p>The exploit works because of an issue CR50 chromebooks have when enrolling. If you reset it at just the right time, it will (some) corrupt data in the FWMP TPM space, resulting in a bricked FWMP. This allows us to boot into shimmer with <span class="highlight">CTRL + U</span> and clear FWMP for when we fix the brick.</p>
         </section>
-
-        <section id="how-i-found-it">
+    <hr>
+        <section>
             <h2>How I Found It</h2>
             <p>While trying to do CRSH2TTY, I ended up bricking my device multiple times (a total of four). One time, I randomly tried to disable write protection while unbricking with a SuzyQ, and surprisingly, it worked!<br>
             <small>All of my exploits have been made due to CRSH2TTY in some way.</small></p>
         </section>
-
-        <section id="how-to-do-it">
+<hr>
+        <section>
             <h2>How to Do It</h2>
             <p>
                 1. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
-                2. Upload the file to the form below and remember the time it gives you.<br>
+                2. Scroll to the section below, follow the steps, memorize the time it gives you. <br>
                 3. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
-                4. Get a stopwatch ready. When you're at the correct time, perform an EC-Reset by holding <span class="highlight">Esc + Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
-                5. Reboot (<span class="highlight">Refresh + Power</span>). If you're still in recovery mode, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it.<br>
-                6. Boot a shim with <span class="highlight">CTRL + U</span> and run deprovision.<br>
-                7. In shimmer, open a bash terminal and run <span class="highlight">gsctool -a -o</span>.<br>
-                8. At the end of this process, you should reboot unenrolled and unbricked.
+                4. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. 
+                5. Wait until you're at the time the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
+                6. Reboot (<span class="highlight">Refresh + Power</span>). If you're still in recovery mode, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it.<br>
+                7. [ADD WHEN WE FIGURE OUT UNENROLLMENT]
             </p>
         </section>
-
-        <section id="help-form">
-            <h2>Check Reset Times</h2>
-            <form action="/upload" method="post" enctype="multipart/form-data">
-                <input type="file" id="file-upload" name="file-upload" required>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <h3>Credits:</h3>
-        <p>
-            <strong><a href="https://discord.com/users/758049822409228348">Byte</a></strong> - Pioneering the development of this<br>
-            <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Figuring out when the timings were and providing a lot of information (probably wouldn't be released without him)<br>
-            <strong><a href="https://discord.com/users/828015910127271986">Silk</a></strong> - Reproducing the bug first and confirming I wasn't insane<br>
-            <strong><a href="https://discord.com/users/1113978877010788432">Kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡
+<hr>
+        <section>
+            <h2>Find Reset Time</h2>
+            <h3>How to use this? </h3>
+            <p>
+            1. Go to chrome://network#logs<br>
+            2. Under the options section check all of the boxes.<br>
+            3. Place the file in <span class="highlight">combined-logs/var/log/chrome/</span> into the file uploader<br>
+            4. Click submit and it should show an alert with the reset times <br>
         </p>
-    </footer>
+            <form action="/upload" method="post" enctype="multipart/form-data"> <!-- forms are weird -->
+                <input type="file" id="file_uploader" name="file_uploader" required>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+            <p><span style="color: #ed8796;">Please report bugs to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span></p>
+        </section>
+        <hr>
+        <br>
+        <footer>
+            <h3>Credits:</h3>
+            <p>
+                <strong><a href="https://discord.com/users/758049822409228348">Byte</a></strong> - Pioneering the development of this, making the website, and coming up with the log consistency idea.<br>
+                <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Figuring out when the timings were and providing a lot of information (probably wouldn't be released without him)<br>
+                <strong><a href="https://discord.com/users/828015910127271986">Silk</a></strong> - Reproducing the bug first and confirming I wasn't insane<br>
+                <strong><a href="https://discord.com/users/1113978877010788432">Kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡<br>
+                <strong><a href="https://discord.com/users/1162193398879502336">doxr</a></strong> - existing (also cleaning up the website, dont read the source)<br>
+                Despite all the hate <a href='https://discord.gg/unblock'>TitaniumNetwork</a> gets, I wouldn’t be doing any of this if I hadn’t found the server. Thanks, TN ❤️—for the opportunities you've given me and for being a hub for so many great relationships.
+            </p>
+        </footer>
+    </main>
 </body>
 </html>
