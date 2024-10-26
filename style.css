@@ -3,61 +3,74 @@
 body {
     font-family: "Inter", Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
+    background-color: #1b1b1b;
     color: #e0e0e0;
+    overflow-x: hidden;
+}
+section {
+    background-color: #161616 ;
+    margin-bottom: -.1vh;
 }
 
 header {
-    background: #191919;
+    background: #181818;
     color: #e0e0e0;
-    padding: 2vw 0;
-    text-align: center;
+    padding: 3vw 0;
     font-family: "Inter";
 }
 
 header h1 {
     margin: -2.7vw;
     margin-bottom: -1.7vw;
-    font-size: 5.25vw;
+    font-size: 11vh;
+    text-align: center;    
 }
 
 header h2 {
     margin: -1.5vw 0;
-    font-size: 1vw;
+    font-size: 2.5vh;
     font-family: "Inter";
 }
 
-header h2 em {
+h2 em {
     font-style: italic;
 }
 
-header a {
+a {
     color: #6250ff;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
-header a:hover {
+a:hover {
     color: #7464ff;
 }
 
 main {
     padding: 2vw;
+    position: absolute;
+    left: 10%;
+    right: 10%;
 }
 
 section {
-    background: #191919;
     margin: 1vw 0;
     margin-top: -4px;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.507);
+}
+
+hr {
+    color: #7f849c;
+    background-color: #7f849c;
+    border-color: #7f849c;
 }
 
 h2 {
-    color: #6250ff;
+    color: #6251ff;
     margin-top: 0;
+    text-align: center;
+    font-size: 3vh;
 }
 
 .highlight {
@@ -99,9 +112,11 @@ form button:hover {
 footer {
     text-align: center;
     padding: 2vw 0;
-    background: #1f1f1f;
+    background: #ffffff00;
     color: #e0e0e0;
     font-size: 13px;
+    border-radius: 10px;
+    height: 10vh;
 }
 
 footer h3 {
@@ -123,5 +138,14 @@ br {
 }
 
 small {
-    font-size: .5vw
+    font-size: .9vh;
+}
+
+#submit:hover {
+    background-color: #4612be;
+}
+
+#text_input {
+    width: 8vw;
+    margin-top: -1vw;
 }
