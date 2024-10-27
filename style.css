@@ -152,6 +152,6 @@ small {
 
 
 @keyframes glow {
-    25% {text-shadow: 0 0 20px #fff, 0 0 30px #60079b, 0 0 40px #60079b, 0 0 50px #60079b, 0 0 60px #60079b, 0 0 70px #60079b, 0 0 80px #60079b;}
+    25% {text-shadow: 0 0 20px #5d09cc, 0 0 30px #3e0885, 0 0 40px #3e0885, 0 0 50px #3e0885, 0 0 60px #3e0885, 0 0 70px #3e0885, 0 0 80px #3e0885;}
     100% {}
   }

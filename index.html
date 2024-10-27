@@ -31,15 +31,16 @@
         </section>
         <section> 
             <h2>requirements for this exploit</h2>
-            <p>1. luck</p>
-            <p>2. a board that is pre-2021<br>
-            as of 28/10/2024, if you have these boards listed below, you cannot do the exploit:<br>
-            brya, brask, cherry, guybrush, skyrim, rex, nissa, corsola, staryu, geralt</p>
+            <p>1. luck <br>
+            2. a board that is pre-2021<br>
+            as of 28/10/2024 (10/28/2024), if you have these boards listed below, you cannot do the exploit:<br>
+            brya, brask, cherry, guybrush, skyrim, rex, nissa, corsola, staryu, geralt<br>
+        <small>if your board is older than those, or you know it's a cr50 (NOT TI50) it will work</small></p>
         </section>
         <section>
-            <h2>steps on how to perform br1ck</h2>
+            <h2>steps on how to perform this</h2>
             <p>
-                1. Go to the section below this one ("Find Reset Time"), memorize the time it gives you, then continue <br>
+                1. Go to the section below this one (finding the reset times), go through the process, and memorize the time it gives you, then continue <br>
                 2. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
                 3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
                 4. Wait until you're at the time the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
@@ -59,9 +60,9 @@
             <h3>how to use this?</h3>
             <p>
             1. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
-            2. Under the options section check all of the boxes.<br>
-            3. Place the file in <span class="highlight">combined-logs/var/log/chrome/</span> into the file uploader<br>
-            4. Click submit and it should show an alert with the reset times <br>
+            2. Under the options section check all of the boxes. <br> <small>You can just select the bottom 2 options if you care.</small><br>
+            3. Place the <span class="highlight">combined-logs[numbers]/var/log/chrome/chrome[numbers]</span> file into the file uploader. <br>
+            4. Click submit and a piece of text will appear with the reset times <br>
         </p>
                 <input type="file" id="file_uploader" name="file_uploader" required>
                 <button type="button" id="submit" onclick="findTime(file_uploader.files[0])">Submit</button> <br>
@@ -73,11 +74,11 @@
             <h3>Credits:</h3>
             <p>
                 <strong><a href="https://discord.com/users/758049822409228348">Byte</a></strong> - Pioneering the development of this, making the website (this is my first one so don't judge), and coming up with the log consistency idea.<br>
-                <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Figuring out when the timings were and providing a lot of information (probably wouldn't be released without him)<br>
+                <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Figured out the start of the logs idea, looked with dbus-monitor --system to gather a basic idea of timings.<br>
                 <strong><a href="https://discord.com/users/828015910127271986">silk</a></strong> - Reproducing the bug first and confirming I wasn't insane<br>
                 <strong><a href="https://discord.com/users/1113978877010788432">Kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡<br>
                 <strong><a href="https://discord.com/users/1162193398879502336">doxr</a></strong> - existing (also cleaning up the website, dont read the source)<br>
-                <strong><a href="https://discord.com/users/769374081991835659">PEAP</a></strong> - THE GOAT!! GAVE ME LOGS WHICH HELPED OPTIMIZE THE TIME BY A WHOLE SECOND, ILY!!<br>
+                <strong><a href="https://discord.com/users/769374081991835659">peap</a></strong> - Gave me logs which made it possible to reproduce (it was a whole second inaccurate before him)<br>
                 <strong><a href="https://discord.com/users/1209096766075703368">appleflyer</a></strong> - touching up the website and bytes emotional support + a lil help :><br>
                 <hr>Despite all the hate <a href='https://discord.gg/unblock'>TitaniumNetwork</a> gets, I wouldn’t be doing any of this if they weren't here. Thanks, TN ❤️—for the opportunities you've given me and for being a hub for fostering so many great relationships. <br>
                 <small>Also fuck you Luphoria, you claim to be against internet censorship then proceed to ban and censor people because you don't like them. You ruin the purpose of TN.</small>
