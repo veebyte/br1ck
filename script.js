@@ -32,9 +32,9 @@ function findTime(file) {
         text = document.getElementById("reset-text")
         text.innerText = "Reset Timing: " + timeDifference
         text.style.display = "block"
-        text.style.animation = "glow 1.5s 1"
+        text.style.animation = "glow 1s 1"
         
-        setTimeout(() => {text.style.animation = "";}, 1500);
+        setTimeout(() => {text.style.animation = "";}, 1000);
     };
 
     reader.readAsText(file);
