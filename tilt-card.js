@@ -1,5 +1,5 @@
 // slapped from bromine src code.
-// made by appleflyer. 2024.
+// made by appleflyer, 2024.
 setTimeout(() => {
     document.querySelectorAll('section').forEach(card => {
         card.style.transition = 'transform 0.3s ease-out';
