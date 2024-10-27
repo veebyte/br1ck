@@ -6,10 +6,11 @@
     <title>BR1CK</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="tilt-card.js"></script>
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
 
     <meta property="og:title" content="BR1CK">
-    <meta property="og:description" content="Unenrollment via bricking the FWMP TPM space.">
+    <meta property="og:description" content="Unenrollment via corrupting the FWMP TPM space.">
     <meta property="og:image" content="/favicon/android-chrome-192x192.png">
 </head>
 <body>
@@ -20,20 +21,27 @@
 
     <main>
         <section> 
-            <h2>How It Works</h2>
-            <p>The exploit works because of an issue CR50 chromebooks have when enrolling. If you reset it at just the right time, it will (some) corrupt data in the FWMP TPM space, resulting in a bricked FWMP. This allows us to boot into shimmer with <span class="highlight">CTRL + U</span> and clear FWMP for when we fix the brick.</p>
+            <h2>how it works</h2>
+            <p>The exploit works because of an issue CR50 chromebooks have when enrolling. If you reset it at just the right time, it will (some) corrupt data in the FWMP TPM space, resulting in an corrupted FWMP space. This allows us to boot into shimmer with <span class="highlight">CTRL + U</span> and to be able to clear FWMP when we fix the corrupted space.</p>
         </section>
         <section>
-            <h2>How I Found It</h2>
+            <h2>how i found the exploit.</h2>
             <p>While trying to do CRSH2TTY, I ended up bricking my device multiple times (a total of four). One time, I randomly tried to disable write protection while unbricking with a SuzyQ, and surprisingly, it worked!<br>
             <small>All of my exploits have been made due to CRSH2TTY in some way.</small></p>
         </section>
+        <section> 
+            <h2>requirements for this exploit</h2>
+            <p>1. luck</p>
+            <p>2. a board that is pre-2021<br>
+            as of 28/10/2024, if you have these boards listed below, you cannot do the exploit:<br>
+            brya, brask, cherry, guybrush, skyrim, rex, nissa, corsola, staryu, geralt</p>
+        </section>
         <section>
-            <h2>How to Do It</h2>
+            <h2>steps on how to perform br1ck</h2>
             <p>
                 1. Go to the section below this one ("Find Reset Time"), memorize the time it gives you, then continue <br>
                 2. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
-                3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. 
+                3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
                 4. Wait until you're at the time the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
                 5. Reboot (<span class="highlight">Refresh + Power</span>). If you're still in recovery mode, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it.<br>
                 6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a><br>
@@ -47,7 +55,7 @@
             </p>
         </section>
         <section>
-            <h2>Find Reset Time</h2>
+            <h2>finding the reset time</h2>
             <h3>How to use this? </h3>
             <p>
             1. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
@@ -70,6 +78,7 @@
                 <strong><a href="https://discord.com/users/1113978877010788432">Kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡<br>
                 <strong><a href="https://discord.com/users/1162193398879502336">doxr</a></strong> - existing (also cleaning up the website, dont read the source)<br>
                 <strong><a href="https://discord.com/users/769374081991835659">PEAP</a></strong> - THE GOAT!! GAVE ME LOGS WHICH HELPED OPTIMIZE THE TIME BY A WHOLE SECOND, ILY!!<br>
+                <strong><a href="https://discord.com/users/1209096766075703368">appleflyer</a></strong> - touching up the website and bytes emotional support + a lil help :><br>
                 <hr>Despite all the hate <a href='https://discord.gg/unblock'>TitaniumNetwork</a> gets, I wouldn’t be doing any of this if they weren't here. Thanks, TN ❤️—for the opportunities you've given me and for being a hub for fostering so many great relationships. <br>
                 <small>Also fuck you Luphoria, you claim to be against internet censorship then proceed to ban and censor people because you don't like them. You ruin the purpose of TN.</small>
             </p>
