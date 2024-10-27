@@ -35,11 +35,13 @@
             2. a board that is pre-2021<br>
             as of 28/10/2024 (10/28/2024), if you have these boards listed below, you cannot do the exploit:<br>
             brya, brask, cherry, guybrush, skyrim, rex, nissa, corsola, staryu, geralt<br>
+            3. (PREFERABLY) access to <a href="chrome://network#logs">chrome://network#logs</a>
         <small>if your board is older than those, or you know it's a cr50 (NOT TI50) it will work</small></p>
         </section>
         <section>
             <h2>steps on how to perform this</h2>
-            <p>
+            <p><details>
+                <summary><b>[RECOMMENDED] For users with chrome://network#logs (can't be policy blocked, can't use oobescape)</b></summary>
                 1. Go to the section below this one (finding the reset times), go through the process, and memorize the time it gives you, then continue <br>
                 2. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
                 3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
@@ -53,7 +55,25 @@
                 11. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 12. When it says to click <span class="highlight">PP</span> click the power button<br>
                 13. Once you're at the end of that process you'll be unenrolled!<br>
-            </p>
+            </details></p>
+            <p><details>
+                <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
+                1. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
+                2. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
+                3. Record how long it took for enrollment to finish <br>
+                4. Take the time it took, take around .5s-1s off, proceed <br>
+                5. Go back to the "Enterprise Enrollment" screen, wait for the time from step 4, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
+                6. If chrome turns back on and its in recovery mode, proceed, otherwise, keep trying (this may take ages but I did it 5 times before the better method was discovered)
+                7. Get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a><br>
+                8. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
+                9. Plug in your shim<br>
+                10. When the shim boots and finishes loading type the letter <span class="highlight">D</span> and click enter to unenroll<br>
+                11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
+                12. Type the following command <span class="highlight">gsctool -a -o</span><br>
+                13. When it says to click <span class="highlight">PP</span> click the power button<br>
+                14. Once you're at the end of that process you'll be unenrolled!<br>
+            </details></p>
+
         </section>
         <section>
             <h2>finding the reset times</h2>
