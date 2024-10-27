@@ -109,6 +109,7 @@ form input[type="file"] {
     background: #5014db;
 }
 
+
 footer {
     text-align: center;
     padding: 2vw 0;
@@ -151,7 +152,6 @@ small {
 
 
 @keyframes glow {
-    25% {text-shadow: 0 0 20px #fff, 0 0 30px #7814bb, 0 0 40px #7814bb, 0 0 50px #7814bb, 0 0 60px #7814bb, 0 0 70px #7814bb, 0 0 80px #7814bb;}
-    75% {text-shadow: 0 0 20px #fff, 0 0 30px #631a72, 0 0 40px #631a72, 0 0 50px #631a72, 0 0 60px #631a72, 0 0 70px #631a72, 0 0 80px #631a72;}
+    25% {text-shadow: 0 0 20px #fff, 0 0 30px #60079b, 0 0 40px #60079b, 0 0 50px #60079b, 0 0 60px #60079b, 0 0 70px #60079b, 0 0 80px #60079b;}
     100% {}
   }
