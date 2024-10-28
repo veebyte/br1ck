@@ -55,7 +55,7 @@
                 10. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 11. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 12. When it says to click <span class="highlight">PP</span> click the power button<br>
-                13. Once you're at the end of that process you'll be unenrolled!<br>
+                13. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
             </details></p>
             <p><details>
                 <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
@@ -72,7 +72,7 @@
                 11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 12. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 13. When it says to click <span class="highlight">PP</span> click the power button<br>
-                14. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, you're fucked<br>
+                14. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
             </details></p>
 
         </section>
@@ -89,6 +89,18 @@
                 <button type="button" id="submit" onclick="findTime(file_uploader.files[0])">Submit</button> <br>
                 <span id="reset-text">Reset Timing: </span>
             <p><span style="color: #ed8796;">Please report bugs to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span></p>
+        </section>
+        <section>
+            <h2>errors while unbricking</h2>
+            <details>
+                <summary><span class="highlight">gsctool -a -o</span> isn't doing anything</summary>
+                <p>
+                    <strong><span class="highlight">gsctool -a -o</span> immediately exists with nothing echoed this solution is for you</strong>
+                    1. Run <span class="highlight">gsctool -a -k</span>
+                    2. Run <span class="highlight">gsctool -a -o</span>
+                    <span style="color: #ed8796;">if this doesn't work, please report it to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span>
+                </p>
+            </details>
         </section>
         <br>
         <footer>
