@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BR1CK</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <script src="tilt-card.js"></script>
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
     <meta property="og:title" content="BR1CK">
     <meta property="og:description" content="Unenrollment via corrupting the FWMP TPM space.">
     <meta property="og:image" content="/favicon/android-chrome-192x192.png">
@@ -80,17 +79,29 @@
             <h2>finding the reset times</h2>
             <h3>how to use this?</h3>
             <p>
-            1. Powerwash (this seems unnecessary but it'll remove potential errors and make it more accurate)
-            1. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
-            2. Under the options section check all of the boxes. <br> <small>You can just select the bottom 2 options if you care.</small><br>
-            3. Place the <span class="highlight">combined-logs.tar.gz/var/log/chrome/chrome[numbers]</span> file into the file uploader. <br>
-            <small>IF YOU SEE "Could not parse for 'Show enrollment screen" PLEASE CHECK THE ERRORS SECTION, DON'T DM ME FOR THIS (unless you have another issue)</small>
-            4. Click submit and a piece of text will appear with the reset times <br>
-        </p>
-                <input type="file" id="file_uploader" name="file_uploader" required>
-                <button type="button" id="submit" onclick="findTime(file_uploader.files[0])">Submit</button> <br>
-                <span id="reset-text">Reset Timing: </span>
-            <p><span style="color: #ed8796;">Please report bugs to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span></p>
+                1. Powerwash (this seems unnecessary but it'll remove potential errors and make it more accurate)
+                1. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
+                2. Under the options section check all of the boxes. <br> <small>You can just select the bottom 2 options if you care.</small><br>
+                3. Place the <span class="highlight">combined-logs.tar.gz</span> file into the dropzone below. <br>
+                <small>IF YOU SEE "Could not parse for 'Show enrollment screen" PLEASE CHECK THE ERRORS SECTION, PLEASE DM <a href="https://discord.com/users/1209096766075703368">@appleflyer</a> FOR THIS (other issues go to byte.)</small>
+                <br>
+                4. The reset timing will appear below the dropzone <br>
+            </p>
+
+            <div class="dropzone" id="dropzone">
+                Drop your combined-logs_******-******.tar.gz file here
+                <br>or<br>
+                <input type="file" id="fileInput" accept=".tar.gz">
+            </div>
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <div id="reset-text"></div>
+            <script src="script.js"></script> <!-- do not shift the script src. this is to ensure the elements above have loaded first. -->
+            <p>
+            <span style="color: #ed8796;">Please report bugs to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span></p>
         </section>
         <section>
             <h2>errors</h2>

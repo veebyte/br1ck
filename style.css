@@ -73,12 +73,6 @@ h2 {
     font-size: 3vh;
 }
 
-.highlight {
-    background-color: #333;
-    color: #e0e0e0;
-    padding: 2px 4px;
-    border-radius: 3px;
-}
 
 form {
     display: flex;
@@ -92,21 +86,6 @@ form label {
 
 form input[type="file"] {
     margin-bottom: 1.5vw;
-}
-
-#submit {
-    padding: 0.5vw 1vw;
-    background: #5b1af3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 17px;
-    width: 100px;
-}
-
-#submit:hover {
-    background: #5014db;
 }
 
 
@@ -139,15 +118,76 @@ br {
 }
 
 
+.dropzone {
+    border: 2px dashed #444;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+    background: #2a2a2a;
+}
+.dropzone.dragover {
+    border-color: #666;
+    background: #333;
+}
+.progress {
+    margin-top: 20px;
+    display: none;
+}
+.progress-bar {
+    height: 20px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progress-fill {
+    height: 100%;
+    background: #4CAF50;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.highlight {
+    background-color: #333;
+    color: #e0e0e0;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+#reset-text {
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #2a2a2a;
+    display: none;
+}
+
 #text_input {
     width: 8vw;
     margin-top: -1vw;
 }
 
-#reset-text { 
-    display: none
+#submit {
+    padding: 0.5vw 1vw;
+    background: #5b1af3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    width: 100px;
 }
 
+#submit:hover {
+    background: #5014db;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #4CAF50; }
+    50% { box-shadow: 0 0 20px #4CAF50; }
+    100% { box-shadow: 0 0 5px #4CAF50; }
+}
 
 @keyframes glow {
     25% {text-shadow: 0 0 20px #5d09cc, 0 0 30px #3e0885, 0 0 40px #3e0885, 0 0 50px #3e0885, 0 0 60px #3e0885, 0 0 70px #3e0885, 0 0 80px #3e0885;}
