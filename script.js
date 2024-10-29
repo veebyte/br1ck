@@ -35,9 +35,9 @@ function findTime(file) {
         const startDate = new Date(formattedStartTime);
         const endDate = new Date(formattedEndTime);
 
-        const timeDifference = (endDate - startDate) / 1000;
+        const displayTime = ((endDate - startDate) - 200) / 1000 + " - " + ((endDate - startDate)+ 200) / 1000;
 
-        text.innerText = "Reset Timing: " + timeDifference
+        text.innerText = "Reset Timing: " + displayTime
         text.style.color = "#e0e0e0"
         text.style.display = "block"
         text.style.animation = "glow 1s 1"

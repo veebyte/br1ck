@@ -22,20 +22,20 @@
     <main>
         <section> 
             <h2>how it works</h2>
-            <p>The exploit works because of an issue CR50 chromebooks have when enrolling. If you reset it at just the right time, it will (some) corrupt data in the FWMP TPM space, resulting in an corrupted FWMP space. This allows us to boot into shimmer with <span class="highlight">CTRL + U</span> and to be able to clear FWMP when we fix the corrupted space.</p>
+            <p>The exploit works because of an issue CR50 chromebooks have when enrolling. If you reset it at just the right time, it will corrupt some data in the FWMP TPM space, resulting in an unreadable FWMP, meaning there are no more protections (besides WP). This allows us to boot into shimmer, unenroll, and fix the brick with <span class="highlight">gsctool -a -o</span></p>
         </section>
         <section>
             <h2>how i found the exploit.</h2>
-            <p>While trying to do CRSH2TTY, I ended up bricking my device multiple times (a total of four). One time, I randomly tried to disable write protection while unbricking with a SuzyQ, and surprisingly, it worked!<br>
+            <p>While trying to do CRSH2TTY, I ended up bricking my device multiple times (a total of four). One time, I randomly tried to disable write protection while unbricking with a SuzyQ, and surprisingly, it worked! This led to the discovery that FWMP doesn't apply while FWMP is corrupted.<br>
             <small>All of my exploits have been made due to CRSH2TTY in some way.</small></p>
         </section>
         <section> 
             <h2>requirements for this exploit</h2>
-            <p>1. luck <br>
-            2. a board that is pre-2021<br>
-            as of 28/10/2024 (10/28/2024), if you have these boards listed below, you cannot do the exploit:<br>
+            <p>1. Luck (or consistency, I am  able to get it very consistently)<br>
+            2. A board that was released pre-2021<br>
+            As of 29/10/2024 (10/29/2024 for us Americans 🤠), if you have one of the boards listed below, you cannot do the exploit:<br>
             brya, brask, cherry, guybrush, skyrim, rex, nissa, corsola, staryu, geralt<br>
-            <small>if your board is older than those, or you know it's a cr50 (NOT TI50) it will work</small><br>
+            <small>if your board is older than those, or you know it's a cr50 (NOT TI-50) it will work</small><br>
             3. (PREFERABLY) access to <a href="chrome://network#logs">chrome://network#logs</a>
             </p>
         </section>
@@ -46,12 +46,12 @@
                 1. Go to the section below this one (finding the reset times), go through the process, and memorize the time it gives you, then continue <br>
                 2. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
                 3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
-                4. Wait until you're at the time the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
-                5. Reboot (<span class="highlight">Refresh + Power</span>). If you're still in recovery mode, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it.<br>
-                6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a><br>
+                4. Wait until you're in the ranges of time (I would go for the higher end) the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
+                5. If you're still in recovery mode when you reboot, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it. (and don't enter recovery mode this time)<br>
+                6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 7. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 8. Plug in your shim<br>
-                9. When the shim boots and finishes loading type the letter <span class="highlight">D</span> and click enter to unenroll<br>
+                9. When the shim boots, run the task corresponding with "Deprovision" <span class="highlight">(D)</span>
                 10. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 11. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 12. When it says to click <span class="highlight">PP</span> click the power button<br>
@@ -62,10 +62,10 @@
                 1. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
                 2. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
                 3. Record how long it took for enrollment to finish <br>
-                4. Take the time it took, take around .5s-1s off, proceed <br>
+                4. Take the time it took, take around 200-500 milliseconds off, proceed <br>
                 5. Go back to the "Enterprise Enrollment" screen, wait for the time from step 4, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
                 6. If chrome turns back on and its in recovery mode, proceed, otherwise, keep trying (this may take ages but I did it 5 times before the better method was discovered)
-                7. Get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a><br>
+                7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 8. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 9. Plug in your shim<br>
                 10. When the shim boots and finishes loading run these 3 commands: Deprovision, Disable Dev Block, Allow booting from usb
@@ -80,9 +80,11 @@
             <h2>finding the reset times</h2>
             <h3>how to use this?</h3>
             <p>
+            1. Powerwash (this seems unnecessary but it'll remove potential errors and make it more accurate)
             1. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
             2. Under the options section check all of the boxes. <br> <small>You can just select the bottom 2 options if you care.</small><br>
-            3. Place the <span class="highlight">combined-logs[numbers]/var/log/chrome/chrome[numbers]</span> file into the file uploader. <br>
+            3. Place the <span class="highlight">combined-logs.tar.gz/var/log/chrome/chrome[numbers]</span> file into the file uploader. <br>
+            <small>IF YOU SEE "Could not parse for 'Show enrollment screen" PLEASE CHECK THE ERRORS SECTION, DON'T DM ME FOR THIS (unless you have another issue)</small>
             4. Click submit and a piece of text will appear with the reset times <br>
         </p>
                 <input type="file" id="file_uploader" name="file_uploader" required>
@@ -91,23 +93,46 @@
             <p><span style="color: #ed8796;">Please report bugs to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span></p>
         </section>
         <section>
-            <h2>errors while unbricking</h2>
+            <h2>errors</h2>
             <details>
-                <summary><span class="highlight">gsctool -a -o</span> isn't doing anything/outputting anything</summary>
+                <summary>Could not parse for 'Show enrollment screen'</summary>
                 <p>
-                    <strong><span class="highlight">gsctool -a -o</span> immediately exists with no output, this solution is for you</strong><br>
+                    i didn't think i'd have to make this but braindead people exist sadly <br>
+                    1. do not input the tar.gz, open the combined-logs.tar.gz <br>
+                    2. open /var/ <br>
+                    3. open /log/ <br>
+                    4. open /chrome. <br>
+                    5. select the (should be singular if you powerwashed) file in there <br>
+                </p>
+            </details>
+            <details>
+                <summary><span class="highlight">gsctool -a -o</span> immediately exits with no output and doesn't reboot</summary>
+                <p>
                     1. Run <span class="highlight">gsctool -a -k</span><br>
                     2. Run <span class="highlight">gsctool -a -o</span><br>
                 </p>
             </details>
-            <span style="color: #ed8796;">if this doesn't work, please report it to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span>
+            <details>
+                <summary><span class="highlight">gsctool -a -o</span> isn't rebooting, but you went through the pp process</summary>
+                <p>
+                    1. boot into the shim <br>
+                    2. go into the factory install part of sh1mmer with <span class="highlight">f + enter</span> <br>
+                    3. select the option corressponding to tpm reset <br>
+                    4. do that twice <br>
+                    5. boot back into the shim <br>
+                    6. run the following: Deprovision, Disable Dev Block, Allow booting from USB <br>
+                    7. open the bash terminal with <span class="highlight">b</span> <br>
+                    8. run <span class="highlight">gsctool -a -k</span> followed by <span class="highlight">gsctool -a -o</span> <br>
+                </p>
+            </details>
+            <span style="color: #ed8796;">if these don't work, please report the error to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span>
         </section>
         <br>
         <footer>
             <h3>Credits:</h3>
             <p>
                 <strong><a href="https://discord.com/users/758049822409228348">Byte</a></strong> - Pioneering the development of this, making the website (this is my first one so don't judge), and coming up with the log consistency idea.<br>
-                <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Figured out the start of the logs idea, looked with dbus-monitor --system to gather a basic idea of timings.<br>
+                <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Found out when we were supposed to restart, all we had left was figuring out when that was.
                 <strong><a href="https://discord.com/users/828015910127271986">silk</a></strong> - Reproducing the bug first and confirming I wasn't insane<br>
                 <strong><a href="https://discord.com/users/1113978877010788432">Kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡<br>
                 <strong><a href="https://discord.com/users/1162193398879502336">doxr</a></strong> - existing (also cleaning up the website, dont read the source)<br>
