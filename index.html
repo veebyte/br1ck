@@ -47,7 +47,7 @@
                 2. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
                 3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
                 4. Wait until you're in the ranges of time (I would go for the higher end) the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
-                5. If you're in recovery mode when you reboot, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it. (and don't enter recovery mode this time)<br>
+                5. If you're still in recovery mode when you reboot, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it. (and don't enter recovery mode this time)<br>
                 6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 7. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 8. Plug in your shim<br>
@@ -107,6 +107,17 @@
         </section>
         <section>
             <h2>errors</h2>
+            <details>
+                <summary>Could not parse for 'Show enrollment screen'</summary>
+                <p>
+                    i didn't think i'd have to make this but braindead people exist sadly <br>
+                    1. do not input the tar.gz, open the combined-logs.tar.gz <br>
+                    2. open /var/ <br>
+                    3. open /log/ <br>
+                    4. open /chrome. <br>
+                    5. select the (should be singular if you powerwashed) file in there <br>
+                </p>
+            </details>
             <details>
                 <summary><span class="highlight">gsctool -a -o</span> immediately exits with no output and doesn't reboot</summary>
                 <p>
