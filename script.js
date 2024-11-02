@@ -37,7 +37,7 @@ function findTime(content) {
     const endDate = new Date(formattedEndTime);
     
     const timeDifference = endDate - startDate;
-    const displayTime = ((timeDifference - 200) / 1000) + " - " + ((timeDifference + 200) / 1000);
+    const displayTime = ((timeDifference) / 1000) + " - " + ((timeDifference + 200) / 1000);
 
     text.innerText = "Reset Timing: " + displayTime;
     text.style.color = "#e0e0e0";
