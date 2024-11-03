@@ -61,10 +61,7 @@
                 16. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
                 17. plug in your shim then click <span class="highlight">ctrl + u</span><br>
                 18. deprovise again then click b for the bash shell<br>
-                19. run the following commands:<br>
-                <span class="highlight">cd /tmp<br>
-                printf "\x76\x28\x10" > fwmp<br>
-                truncate -s 40 fwmp<br>
+                19. run the following command: <span class="highligh">tpm_manager_client destroy_space --index=0x100a</span>
                 tpm_manager_client write_space --index=0x100a --file=fwmp<br></span><br>
                 20. reboot and enter vt2<br>
                 21. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
@@ -91,11 +88,7 @@
                 17. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
                 18. plug in your shim then click <span class="highlight">ctrl + u</span><br>
                 19. deprovise again then click b for the bash shell<br>
-                20. run the following commands:<br>
-                <span class="highlight">cd /tmp<br>
-                printf "\x76\x28\x10" > fwmp<br>
-                truncate -s 40 fwmp<br>
-                tpm_manager_client write_space --index=0x100a --file=fwmp<br></span><br>
+                20. run the following command: <span class="highligh">tpm_manager_client destroy_space --index=0x100a</span>
                 21. reboot and enter vt2<br>
                 22. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
                 23. leave vt2 and you should be good<br>
