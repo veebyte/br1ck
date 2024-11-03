@@ -55,9 +55,20 @@
                 10. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 11. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 12. When it says to click <span class="highlight">PP</span> click the power button<br>
-                14. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
-                15. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, then ctrl + d again (or boot from internal disk)<br>
-                downgrade with kvs and then use badrecovery to fully unenroll (if u dont know how to wait till next website update)
+                13. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
+                14. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, enter dev mode, and reboot the shim<br><br>
+                15. Now that you're in the shim (legacy hopefully) run "Enable USB Boot" (or whatever, its the letter U)<br>
+                16. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
+                17. plug in your shim then click <span class="highlight">ctrl + u</span><br>
+                18. deprovise again then click b for the bash shell<br>
+                19. run the following commands:<br>
+                <span class="highlight">cd /tmp<br>
+                printf "\x76\x28\x10" > fwmp<br>
+                truncate -s 40 fwmp<br>
+                tpm_manager_client write_space --index=0x100a --file=fwmp<br></span><br>
+                20. reboot and enter vt2<br>
+                21. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
+                22. leave vt2 and you should be good<br>
             </details></p>
             <p><details>
                 <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
@@ -76,7 +87,18 @@
                 13. When it says to click <span class="highlight">PP</span> click the power button<br>
                 14. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
                 15. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, then ctrl + d again (or boot from internal disk)<br>
-                owngrade with kvs and then use badrecovery to fully unenroll (if u dont know how to wait till next website update)
+                16. Now that you're in the shim (legacy hopefully) run "Enable USB Boot" (or whatever, its the letter U)<br>
+                17. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
+                18. plug in your shim then click <span class="highlight">ctrl + u</span><br>
+                19. deprovise again then click b for the bash shell<br>
+                20. run the following commands:<br>
+                <span class="highlight">cd /tmp<br>
+                printf "\x76\x28\x10" > fwmp<br>
+                truncate -s 40 fwmp<br>
+                tpm_manager_client write_space --index=0x100a --file=fwmp<br></span><br>
+                21. reboot and enter vt2<br>
+                22. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
+                23. leave vt2 and you should be good<br>
             </details></p>
 
         </section>
