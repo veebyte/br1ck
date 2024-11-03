@@ -51,18 +51,17 @@
                 6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 7. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 8. Plug in your shim<br>
-                9. When the shim boots, run the task corresponding with "Deprovision" <span class="highlight">(D)</span>
+                9. When the shim boots, run the task corresponding with "Deprovision" <span class="highlight">(D)</span><br>
                 10. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 11. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 12. When it says to click <span class="highlight">PP</span> click the power button<br>
                 13. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
-                14. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, enter dev mode, and reboot the shim<br><br>
+                14. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, enter dev mode, and reboot the shim<br>
                 15. Now that you're in the shim (legacy hopefully) run "Enable USB Boot" (or whatever, its the letter U)<br>
                 16. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
                 17. plug in your shim then click <span class="highlight">ctrl + u</span><br>
                 18. deprovise again then click b for the bash shell<br>
-                19. run the following command: <span class="highligh">tpm_manager_client destroy_space --index=0x100a</span>
-                tpm_manager_client write_space --index=0x100a --file=fwmp<br></span><br>
+                19. run the following command: <span class="highligh">tpm_manager_client destroy_space --index=0x100a</span><br>
                 20. reboot and enter vt2<br>
                 21. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
                 22. leave vt2 and you should be good<br>
@@ -78,7 +77,7 @@
                 7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 8. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 9. Plug in your shim<br>
-                10. When the shim boots and finishes loading run these 3 commands: Deprovision, Disable Dev Block, Allow booting from usb
+                10. When the shim boots and finishes loading run these 3 commands: Deprovision, Disable Dev Block, Allow booting from usb<br>
                 11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 12. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 13. When it says to click <span class="highlight">PP</span> click the power button<br>
@@ -88,7 +87,7 @@
                 17. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
                 18. plug in your shim then click <span class="highlight">ctrl + u</span><br>
                 19. deprovise again then click b for the bash shell<br>
-                20. run the following command: <span class="highligh">tpm_manager_client destroy_space --index=0x100a</span>
+                20. run the following command: <span class="highligh">tpm_manager_client destroy_space --index=0x100a</span><br>
                 21. reboot and enter vt2<br>
                 22. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
                 23. leave vt2 and you should be good<br>
