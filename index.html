@@ -16,7 +16,7 @@
 <body>
     <header>
         <h1>BR1CK</h1>
-        <h2 id="join-button"><em>By <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a></em><br>THIS IS EXTREMELY RISKY!! PROCEED WITH CAUTION!!!</h2>
+        <h2 id="join-button"><em>By <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a></em><br>i dont recommend doing this till next website update</h2>
     </header>
 
     <main>
@@ -47,7 +47,7 @@
                 2. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
                 3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
                 4. Wait until you're in the ranges of time (I would go for the higher end) the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
-                5. If you're still in recovery mode when you reboot, click TAB. If the recovery reason is not <span class="highlight">"Recovery Button Pressed"</span>, continue! Otherwise, retry until you get it. (and don't enter recovery mode this time)<br>
+                5. If chrome turns back on and its in recovery mode, proceed, otherwise, keep trying (this may take ages but I did it 5 times before the better method was discovered)
                 6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 7. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 8. Plug in your shim<br>
@@ -57,10 +57,7 @@
                 12. When it says to click <span class="highlight">PP</span> click the power button<br>
                 14. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
                 15. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, then ctrl + d again (or boot from internal disk)<br>
-                16. When you boot, go into vt2 by holding <span class="highlight">ctrl + alt</span> then clicking the <span class="highlight">forward arrow</span> on upmost top bar on your keyboard <br>
-                17. Login as <span class="highlight">root</span> (the password is "test0000" if it needs one) and type in, <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
-                18. Also, type in <span class="highlight">crossystem check_enrollment=0</span><br>
-                19. You're done! You should be unenrolled.
+                downgrade with kvs and then use badrecovery to fully unenroll (if u dont know how to wait till next website update)
             </details></p>
             <p><details>
                 <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
@@ -79,10 +76,7 @@
                 13. When it says to click <span class="highlight">PP</span> click the power button<br>
                 14. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
                 15. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, then ctrl + d again (or boot from internal disk)<br>
-                16. When you boot, go into vt2 by holding <span class="highlight">ctrl + alt</span> then clicking the <span class="highlight">forward arrow</span> on upmost top bar on your keyboard <br>
-                17. Login as <span class="highlight">root</span> (the password is "test0000" if it needs one) and type in, <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
-                18. Also, type in <span class="highlight">crossystem check_enrollment=0</span>
-                19. You're done! You should be unenrolled.
+                owngrade with kvs and then use badrecovery to fully unenroll (if u dont know how to wait till next website update)
             </details></p>
 
         </section>
