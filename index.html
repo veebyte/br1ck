@@ -50,8 +50,8 @@
                 5. If chrome turns back on and it is bricked (click the arrow to see images), proceed, otherwise, keep trying (this may take ages but most people can get it in 2-20 tries)<br>
                 <details>
                     <summary></summary>
-                    <img src="images/chromeosismissingordamaged.jpg" style="width:30px;height:30px"></img>
-                    <img src="images/somethingwentwrong.jpg" style="width:30px;height:30px"></img>
+                    <img src="images/chromeosismissingordamaged.jpg" style="width:4vh;height:4vh"></img>
+                    <img src="images/somethingwentwrong.jpg" style="width:4vh;height:4vh"></img>
                     <p>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</p>
                 </details>
                 6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
@@ -72,24 +72,23 @@
                 3. Record how long it took for enrollment to finish <br>
                 4. Take the time it took, take around 200-500 milliseconds off, proceed <br>
                 5. Go back to the "Enterprise Enrollment" screen, wait for the time from step 4, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
-                6. If chrome turns back on and its in recovery mode, proceed, otherwise, keep trying (this may take ages but I did it 5 times before the better method was discovered)
+                6. If chrome turns back on and it is bricked (click the arrow to see images), proceed, otherwise, keep trying (this may take ages but most people can get it in 2-20 tries)<br>
+                <details>
+                    <summary></summary>
+                    <img src="images/chromeosismissingordamaged.jpg" style="width:4vh;height:4vh"></img>
+                    <img src="images/somethingwentwrong.jpg" style="width:4vh;height:4vh"></img>
+                    <p>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</p>
+                </details>
                 7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 8. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 9. Plug in your shim<br>
-                10. When the shim boots and finishes loading run these 3 commands: Deprovision, Disable Dev Block, Allow booting from usb<br>
+                10. When the shim boots, run the task corresponding with "Deprovision" <span class="highlight">(D)</span><br>
                 11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 12. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 13. When it says to click <span class="highlight">PP</span> click the power button<br>
-                14. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
-                15. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, then ctrl + d again (or boot from internal disk)<br>
-                16. Now that you're in the shim (legacy hopefully) run "Enable USB Boot" (or whatever, its the letter U)<br>
-                17. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
-                18. plug in your shim then click <span class="highlight">ctrl + u</span><br>
-                19. deprovise again then click b for the bash shell<br>
-                20. run the following command: <span class="highlight">tpm_manager_client destroy_space --index=0x100a</span><br>
-                21. reboot and enter vt2<br>
-                22. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
-                23. leave vt2 and you should be good<br>
+                14. Once you're at the end of that process you should reboot and you'll be unenrolled (kinda, keep going)! if you don't reboot/gsctool doesn't work, proceed to the bottom section, "errors while unbricking"<br>
+                15. Start the oobe process and stop when you're at the <span class="highlight">Getting device ready</span> screen
+                16. When it says, <span class="highlight">Enterprise Enrollment</span> go into recovery mode 
             </details></p>
 
         </section>
