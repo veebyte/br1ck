@@ -47,7 +47,12 @@
                 2. Powerwash and go through the regular setup until the "Getting device ready" screen.<br>
                 3. Get a stopwatch ready and wait for the "Enterprise Enrollment" screen. <br>
                 4. Wait until you're in the ranges of time (I would go for the higher end) the file uploader gave you, perform an EC-Reset by holding <span class="highlight">Refresh</span> and then clicking <span class="highlight">Power</span>.<br>
-                5. If chrome turns back on and its in recovery mode, proceed, otherwise, keep trying (this may take ages but I did it 5 times before the better method was discovered)
+                5. If chrome turns back on and it is bricked (click the arrow to see images), proceed, otherwise, keep trying (this may take ages but most people can get it in 2-20 tries)
+                <details>
+                    <img src="images/chromeosismissingordamaged.jpg"></img>
+                    <img src="images/somethingwentwrong.jpg"></img>
+                    <p>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</p>
+                </details>
                 6. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
                 7. Click <span class="highlight">CTRL + D</span>, once it reboots go into recovery mode <span class="highlight">ESC + Refresh + Power</span><br>
                 8. Plug in your shim<br>
@@ -55,16 +60,9 @@
                 10. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 11. Type the following command <span class="highlight">gsctool -a -o</span><br>
                 12. When it says to click <span class="highlight">PP</span> click the power button<br>
-                13. Once you're at the end of that process you should reboot and you'll be unenrolled! if you're not, proceed to the bottom section, "errors while unbricking"<br>
-                14. THAT ISNT THE END! When you boot into secure mode go in recovery mode, click ctrl + d, enter dev mode, and reboot the shim<br>
-                15. Now that you're in the shim (legacy hopefully) run "Enable USB Boot" (or whatever, its the letter U)<br>
-                16. click e to reboot and get onto the screen where you would boot from devmode (the os verification is off/boot from internal disk screen)<br>
-                17. plug in your shim then click <span class="highlight">ctrl + u</span><br>
-                18. deprovise again then click b for the bash shell<br>
-                19. run the following command: <span class="highlight">tpm_manager_client destroy_space --index=0x100a</span><br>
-                20. reboot and enter vt2<br>
-                21. run the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
-                22. leave vt2 and you should be good<br>
+                13. Once you're at the end of that process you should reboot and you'll be unenrolled (kinda, keep going)! if you don't reboot/gsctool doesn't work, proceed to the bottom section, "errors while unbricking"<br>
+                14. Start the oobe process and stop when you're at the <span class="highlight">Getting device ready</span> screen
+                15. When it says, <span class="highlight">Enterprise Enrollment</span> go into recovery mode 
             </details></p>
             <p><details>
                 <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
