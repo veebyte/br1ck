@@ -67,14 +67,14 @@
                 9. Plug in your shim USB<br>
                 <small>If you get a screen saying "the device does not contain ChromeOS"/"no valid image" you either chose the wrong shim for your board, didn't go into developer mode, bad flash, bad file, or you've been keyrolled (and cannot continue)</small>
                 10. When the shim boots, type <span class="highlight">D</span> to select "Deprovision"<br>
-                11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
+                11. Next, type <span class="highlight">U</span> to enable USB booting, then type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 12. Type the following command:<pre class="highlight">gsctool -a -o</pre>Press the power button whenever it spams "Press PP button now!" (this will take awhile)<br>
                 13. Once you're at the end of that process you should reboot and you'll be back at the "Welcome!" screen. (if you don't reboot/gsctool doesn't work, proceed to the bottom section, "errors while unbricking")<br>
                 14. Get back into developer mode by pressing <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span>. 
                 15. Either press <span class="highlight">CTRL + D</span> if you're on a <span style="color:white;">"OS verification is OFF"</span> white screen, or <span class="highlight">enter</span> if you're on a <span style="color:gray;">"You are in developer mode"</span> black screen. (keep this in mind if you want to stay in developer mode, you will have to do this each time you power it on)
                 16. You may get a "Your system is transitioning into Developer Mode" screen, wait for the 5 minute timer to finish, then follow step 15 again to boot into ChromeOS.
                 17. Follow the setup until you get to <span class="highlight">Getting device ready</span><br>
-                18. When you get to <span class="highlight">Enterprise enrollment</span> go into recovery mode with <span class="highlight">ESC + ↻ + ⏻</span> and plug the shim USB you used in step 9.<br>
+                18. When you get to <span class="highlight">Enterprise enrollment</span> go EC-reset <span class="highlight">↻+⏻</span>, plug the shim USB you used in step 9, and press Ctrl+U<br>
                 19. Follow step 10 to select "Deprovision" and you're done!
             </details></p>
             <p><details style="line-height:2;font-size:18px;">
@@ -95,14 +95,14 @@
                 9. Plug in your shim USB<br>
                 <small>If you get a screen saying "the device does not contain ChromeOS"/"no valid image" you either chose the wrong shim for your board, didn't go into developer mode, bad flash, bad file, or you've been keyrolled (and cannot continue)</small>
                 10. When the shim boots, type <span class="highlight">D</span> to select "Deprovision"<br>
-                11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
+                11. Next, type <span class="highlight">U</span> to enable USB booting, then type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
                 12. Type the following command:<pre class="highlight">gsctool -a -o</pre>Press the power button whenever it spams "Press PP button now!" (this will take awhile)<br>
                 13. Once you're at the end of that process you should reboot and you'll be back at the "Welcome!" screen. (if you don't reboot/gsctool doesn't work, proceed to the bottom section, "errors while unbricking")<br>
                 14. Get back into developer mode by pressing <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span>. 
                 15. Either press <span class="highlight">CTRL + D</span> if you're on a <span style="color:white;">"OS verification is OFF"</span> white screen, or <span class="highlight">enter</span> if you're on a <span style="color:gray;">"You are in developer mode"</span> black screen. (keep this in mind if you want to stay in developer mode, you will have to do this each time you power it on)
                 16. You may get a "Your system is transitioning into Developer Mode" screen, wait for the 5 minute timer to finish, then follow step 15 again to boot into ChromeOS.
                 17. Follow the setup until you get to <span class="highlight">Getting device ready</span><br>
-                18. When you get to <span class="highlight">Enterprise enrollment</span> go into recovery mode with <span class="highlight">ESC + ↻ + ⏻</span> and plug the shim USB you used in step 9.<br>
+                18. When you get to <span class="highlight">Enterprise enrollment</span> go EC-reset <span class="highlight">↻+⏻</span>, plug the shim USB you used in step 9, and press Ctrl+U<br>
                 19. Follow step 10 to select "Deprovision" and you're done!
             </details></p>
 
