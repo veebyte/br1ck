@@ -53,9 +53,9 @@ main {
 }
 
 section {
-    margin: 1vw 0;
+    margin: 2vw 0;
     margin-top: -4px;
-    padding: 25px;
+    padding: 3vh;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.507);
 }
@@ -70,7 +70,7 @@ h2 {
     color: #6251ff;
     margin-top: 0;
     text-align: center;
-    font-size: 3vh;
+    font-size: 2.7vw;
 }
 
 
