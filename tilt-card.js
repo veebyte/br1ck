@@ -1,3 +1,4 @@
+/*
 // slapped from bromine src code.
 // made by appleflyer, 2024.
 setTimeout(() => {
@@ -27,3 +28,4 @@ setTimeout(() => {
         });
     });
 }, 100);
+*/
