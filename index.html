@@ -46,13 +46,13 @@
             </details>
             3. (PREFERABLY) access to <a href="chrome://network#logs">chrome://network#logs</a><br>
             4. A leaked shim, a USB drive, and another pc to flash it
-            4.1. if you have a keyrolled <span class="highlight">dedede</span> then you can buy a <a href="https://www.ebay.com/itm/335130747039">suzy qable (highly recommend this seller, bought from them and they're highly reputable)</a> and use alternative steps i can provide/walk you through
+            4.1. if you have a keyrolled <span class="highlight">dedede</span> then you can buy a <a href="https://www.ebay.com/itm/335130747039">suzy qable</a><small>(highly recommend this seller, bought from them and they're highly reputable)</small> and use alternative steps i can provide/walk you through
             </p>
         </section>
         <section>
             <h2>how do i perform this exploit?</h2>
             <p>Backup anything that is not sync'd to your google account (mainly files)</p><p>It is a good idea to read these instructions on another device like a phone, you will not be able to access this guide on the chromebook you are using</p>
-            <p><details style="line-height:2;font-size:18px;">
+            <p><details style="line-height:1.75;font-size:15px;">
                 <summary><b>[RECOMMENDED] For users with chrome://network#logs (can't be policy blocked, can't use oobescape)</b></summary>
                 1. Go to the <a href="#timer">section below this one</a> (finding the reset times), go through the process, and memorize the time it gives you, then continue<br>
                 2. Powerwash again by signing out, pressing Ctrl+Alt+Shift+R<br>
@@ -75,12 +75,13 @@
                 14. Get back into developer mode by pressing <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span>.<br> 
                 15. Either press <span class="highlight">CTRL + D</span> if you're on a <span style="color:white;">"OS verification is OFF"</span> white screen, or <span class="highlight">enter</span> if you're on a <span style="color:gray;">"You are in developer mode"</span> black screen. (keep this in mind if you want to stay in developer mode, you will have to do this each time you power it on)<br>
                 16. You may get a "Your system is transitioning into Developer Mode" screen, wait for the 5 minute timer to finish, then follow step 15 again to boot into ChromeOS.<br>
-                17. Start setting up your chromebook in OOBE by clicking <span class="highlight">Get Started</span>, going through WiFi, and continuing. You should enroll. <br>
-                18. Enter VT2 <span class="highlight">ctrl + alt + →</span><br>
-                19. In VT2 type the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
-                20. Powerwash or return to secure mode and once you go back through OOBE setup you should be unenrolled! <small>if you arent contact byte (check the credits for where to contact) for help</small>
+                17. Start setting up your chromebook in OOBE by clicking <span class="highlight">Get Started</span>, going through WiFi, and continuing. Then prepare for the next step. <br>
+                18. When it says <span class="highlight">Enterprise Enrollement</span> boot into recovery mode <span class="highlight">(ESC + ↻ + ⏻)</span> <br>
+                19. Boot the shim<br>
+                20. Run deprovise (D), then reboot (e), boot and you should be unenrolled!<br>
+                <small>dm <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord or join <a href="https://discord.gg/Pb6qUkacpj">copernicium</a> for help with anything</small>
             </details></p>
-            <p><details style="line-height:2;font-size:18px;">
+            <p><details style="line-height:1.75;font-size:15px;">
                 <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
                 1. Powerwash by signing out, pressing Ctrl+Alt+Shift+R, and following the instructions.<br>
                 2. Proceed with the setup until you get to the "Getting device ready" screen.<br>
@@ -104,10 +105,11 @@
                 14. Get back into developer mode by pressing <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span>.<br> 
                 15. Either press <span class="highlight">CTRL + D</span> if you're on a <span style="color:white;">"OS verification is OFF"</span> white screen, or <span class="highlight">enter</span> if you're on a <span style="color:gray;">"You are in developer mode"</span> black screen. (keep this in mind if you want to stay in developer mode, you will have to do this each time you power it on)<br>
                 16. You may get a "Your system is transitioning into Developer Mode" screen, wait for the 5 minute timer to finish, then follow step 15 again to boot into ChromeOS.<br>
-                17. Start setting up your chromebook in OOBE by clicking <span class="highlight">Get Started</span>, going through WiFi, and continuing. You should enroll. <br>
-                18. Enter VT2 <span class="highlight">ctrl + alt + →</span><br>
-                19. In VT2 type the following command: <span class="highlight">vpd -i RW_VPD -s check_enrollment=0</span><br>
-                20. Powerwash or return to secure mode and once you go back through OOBE setup you should be unenrolled! <small>if you arent contact byte (check the credits for where to contact) for help</small>
+                17. Start setting up your chromebook in OOBE by clicking <span class="highlight">Get Started</span>, going through WiFi, and continuing. Then prepare for the next step. <br>
+                18. When it says <span class="highlight">Enterprise Enrollement</span> boot into recovery mode <span class="highlight">(ESC + ↻ + ⏻)</span> <br>
+                19. Boot the shim<br>
+                20. Run deprovise (D), then reboot (e), boot and you should be unenrolled!<br>
+                <small>dm <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord or join <a href="https://discord.gg/Pb6qUkacpj">copernicium</a> for help with anything</small>
             </details></p>
 
         </section>
@@ -181,21 +183,16 @@
                         <source src="images/IMG_3168.mov" type="video/mp4"></video>
                 </p>
             </details>
-            <details>
-                <summary>I need more help, can I call you?</summary>
-                <p>Call +1 650 253 4357 (American) || +353 1 543 1300 (Irish) || +91 40 6616 9100 (India)</p>
-                <p>Then, ask us about how to solve your issue; please provide what step you're stuck on :D</p>
-            </details>
             <span style="color: #ed8796;">if these don't work, please report the error to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span>
         </section>
         <br>
         <footer>
             <h3>Credits:</h3>
             <p>
-                <strong><a href="https://discord.com/users/758049822409228348">Byte</a></strong> - Pioneering the development of this, making the website (this is my first one so don't judge), and coming up with the log consistency idea.<br>
-                <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Found out when we were supposed to restart, all we had left was figuring out when that was.
+                <strong><a href="https://discord.com/users/758049822409228348">byte</a></strong> - Pioneering the development of this, making the website (this is my first one so don't judge), and coming up with the log consistency idea.<br>
+                <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Found out when we were supposed to restart, all we had left was figuring out when that was.<br>
                 <strong><a href="https://discord.com/users/828015910127271986">silk</a></strong> - Reproducing the bug first and confirming I wasn't insane<br>
-                <strong><a href="https://discord.com/users/1113978877010788432">Kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡<br>
+                <strong><a href="https://discord.com/users/1113978877010788432">kilo</a></strong> - Even if he didn't reproduce, he tested SO much (literal hours), major respect to him 🫡<br>
                 <strong><a href="https://discord.com/users/1162193398879502336">doxr</a></strong> - existing (also cleaning up the website, dont read the source)<br>
                 <strong><a href="https://discord.com/users/769374081991835659">peap</a></strong> - Gave me logs which made it possible to reproduce (it was a whole second inaccurate before him)<br>
                 <strong><a href="https://discord.com/users/1209096766075703368">appleflyer</a></strong> - adding direct log archive parsing functionality for calculating timings and bytes emotional support + helping a lil :><br>
