@@ -18,8 +18,7 @@
         <center><img src="images/br1ck.png" width="420"></center>
         <h2 id="join-button"><em>By <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a></em><br>
     </header>
-
-    <main>
+     <main>
         <section> 
             <h2>what even is BR1CK?</h2>
             <p>BR1CK was an exploit released October 27th, 2024. It is capable of unenrolling all devices with a Cr50 chip on the latest version, v130. It has a low chance of being patched without a release of a new Chromebook model.</p>
@@ -45,8 +44,8 @@
                 <small id="boardname">Go to <a href="chrome://version">chrome://version</a>, click <span class="highlight">Ctrl + F</span> and search for "stable-channel" the word after that is your board</small><br>
             </details>
             3. (PREFERABLY) access to <a href="chrome://network#logs">chrome://network#logs</a><br>
-            4. A leaked shim, a USB drive, and another pc to flash it
-            4.1. if you have a keyrolled <span class="highlight">dedede</span> then you can buy a <a href="https://www.ebay.com/itm/335130747039">suzy qable</a><small>(highly recommend this seller, bought from them and they're highly reputable)</small> and use alternative steps i can provide/walk you through
+            <div>4. A leaked shim, a USB drive, and another pc to flash it</div>
+            <div>4.1. if you have a keyrolled <span class="highlight">dedede</span> then you can buy a <a href="https://www.ebay.com/itm/335130747039">suzy qable</a><small>(highly recommend this seller, bought from them and they're highly reputable)</small> and use alternative steps i can provide/walk you through</div>
             </p>
         </section>
         <section>
@@ -63,9 +62,43 @@
                     <img src="images/chromeosismissingordamaged.jpg" style="width:30vh;height:30vh"></img>
                     <img src="images/somethingwentwrong.jpg" style="width:40vh;height:30vh"></img><br>
                     <small>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</small></center>
-                7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
-                <small>If you don't know your board name and still went on with these steps, you can look it up by entering the model name at the bottom on a site like <a href="https://cros.tech">cros.tech</a></small><br>
-                8. Press <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span> to enable developer mode (It doesn't matter if it's blocked), and then <span class="highlight">ESC + ↻ + ⏻</span> to enter recovery mode.<br>
+                7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">legacy shim</a> (this guide will be using legacy)<br>
+                <div><small>(if you do use a modern shim do steps 8-9 and then select "Deprovision" and then open a bash shell and continue from there)</small></div>
+
+                <div><small>If you don't know your board name and still went on with these steps, you can look it up by entering the model name at the bottom on a site like <a href="https://cros.tech">cros.tech</a></small></div>
+                8. Press <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>enter<span class="highlight">and then ESC + ↻ + ⏻</span> to enter recovery mode and enable dev mode.<br>
+                9. Plug in your shim USB<br>
+                <small>If you get a screen saying "the device does not contain ChromeOS"/"no valid image" you either chose the wrong shim for your board, didn't go into developer mode, bad flash, bad file, or you've been keyrolled (and cannot continue)</small><br>
+                10. When the shim boots, type <span class="highlight">D</span> to select "Deprovision"<br>
+                11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
+                12. Type the following command:<pre class="highlight">gsctool -a -o</pre>Press the power button whenever it spams "Press PP button now!" (this will take awhile) <small>whenever it says "Another press will be required" it is telling you to wait, you may have to wait for a minute or even more.</small><br>
+                13. Once you're at the end of that process you should reboot and you'll be back at the "Welcome!" screen. (if you don't reboot/gsctool doesn't work, proceed to the bottom section, "errors while unbricking")<br>
+                14. Get back into developer mode by pressing <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span>.<br> 
+                15. Either press <span class="highlight">CTRL + D</span> if you're on a <span style="color:white;">"OS verification is OFF"</span> white screen, or <span class="highlight">enter</span> if you're on a <span style="color:gray;">"You are in developer mode"</span> black screen. (keep this in mind if you want to stay in developer mode, you will have to do this each time you power it on)<br>
+                16. You may get a "Your system is transitioning into Developer Mode" screen, wait for the 5 minute timer to finish, then follow step 15 again to boot into ChromeOS.<br>
+                17. Start setting up your chromebook in OOBE by clicking <span class="highlight">Get Started</span>, going through WiFi, and continuing. Then prepare for the next step. <br>
+                18. When it says <span class="highlight">Enterprise Enrollement</span> boot into recovery mode <span class="highlight">(ESC + ↻ + ⏻)</span> <br>
+                19. Boot the shim<br>
+                20. Run deprovision (D), then reboot (e), and you should be unenrolled!<br>
+                <small>dm <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord or join <a href="https://discord.gg/Pb6qUkacpj">copernicium</a> for help with anything</small>
+            </details></p>
+            <p><details style="line-height:1.75;font-size:15px;">
+                <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
+                1. Powerwash by signing out, pressing Ctrl+Alt+Shift+R, and following the instructions.<br>
+                2. Proceed with the setup until you get to the "Getting device ready" screen.<br>
+                3. Get a stopwatch ready and wait for the "Enterprise enrollment" screen.<br>
+                3.5. Start your stopwatch and record how long it took for enrollment to finish <br>
+                4. Take the time it took, take around 1-1.5 seconds off the time it took to enroll, proceed<br>
+                5. Powerwash again by following step 1, go through the setup, and when you get to the "Enterprise enrollment" screen, start your stopwatch and wait for the time you got from step 4, perform an EC-Reset by <span class="highlight">↻+⏻</span>.<br>
+                6. If chrome turns back on and you get one of the following screens, proceed, otherwise, keep trying (this may take ages but most people can get it in 2-20 tries)<br><center>
+                    <img src="images/chromeosismissingordamaged.jpg" style="width:30vh;height:30vh"></img>
+                    <img src="images/somethingwentwrong.jpg" style="width:40vh;height:30vh"></img><br>
+                    <small>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</small></center>
+                7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">legacy shim</a> (this guide will be using legacy)<br>
+                <div><small>(if you do use a modern shim do steps 8-9 and then select "Deprovision" and then open a bash shell and continue from there)</small></div>
+
+                <div><small>If you don't know your board name and still went on with these steps, you can look it up by entering the model name at the bottom on a site like <a href="https://cros.tech">cros.tech</a></small></div>
+                8. Press <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>enter<span class="highlight">and then ESC + ↻ + ⏻</span> to enter recovery mode.<br>
                 9. Plug in your shim USB<br>
                 <small>If you get a screen saying "the device does not contain ChromeOS"/"no valid image" you either chose the wrong shim for your board, didn't go into developer mode, bad flash, bad file, or you've been keyrolled (and cannot continue)</small><br>
                 10. When the shim boots, type <span class="highlight">D</span> to select "Deprovision"<br>
@@ -81,35 +114,10 @@
                 20. Run deprovise (D), then reboot (e), boot and you should be unenrolled!<br>
                 <small>dm <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord or join <a href="https://discord.gg/Pb6qUkacpj">copernicium</a> for help with anything</small>
             </details></p>
+
             <p><details style="line-height:1.75;font-size:15px;">
-                <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
-                1. Powerwash by signing out, pressing Ctrl+Alt+Shift+R, and following the instructions.<br>
-                2. Proceed with the setup until you get to the "Getting device ready" screen.<br>
-                3. Get a stopwatch ready and wait for the "Enterprise enrollment" screen.<br>
-                3.5. Start your stopwatch and record how long it took for enrollment to finish <br>
-                4. Take the time it took, take around 1-1.5 seconds off the time it took to enroll, proceed<br>
-                5. Powerwash again by following step 1, go through the setup, and when you get to the "Enterprise enrollment" screen, start your stopwatch and wait for the time you got from step 4, perform an EC-Reset by <span class="highlight">↻+⏻</span>.<br>
-                6. If chrome turns back on and you get one of the following screens, proceed, otherwise, keep trying (this may take ages but most people can get it in 2-20 tries)<br><center>
-                    <img src="images/chromeosismissingordamaged.jpg" style="width:30vh;height:30vh"></img>
-                    <img src="images/somethingwentwrong.jpg" style="width:40vh;height:30vh"></img><br>
-                    <small>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</small></center>
-                7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
-                <small>If you don't know your board name and still went on with these steps, you can look it up by entering the model name at the bottom on a site like <a href="https://cros.tech">cros.tech</a></small><br>
-                8. Press <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span> to enable developer mode (It doesn't matter if it's blocked), and then <span class="highlight">ESC + ↻ + ⏻</span> to enter recovery mode.<br>
-                9. Plug in your shim USB<br>
-                <small>If you get a screen saying "the device does not contain ChromeOS"/"no valid image" you either chose the wrong shim for your board, didn't go into developer mode, bad flash, bad file, or you've been keyrolled (and cannot continue)</small><br>
-                10. When the shim boots, type <span class="highlight">D</span> to select "Deprovision"<br>
-                11. Next, type <span class="highlight">B</span> to open a bash shell, this is where we'll unbrick<br>
-                12. Type the following command:<pre class="highlight">gsctool -a -o</pre>Press the power button whenever it spams "Press PP button now!" (this will take awhile) <small>whenever it says "Another press will be required" it is telling you to wait, you may have to wait for a minute or even more.</small><br>
-                13. Once you're at the end of that process you should reboot and you'll be back at the "Welcome!" screen. (if you don't reboot/gsctool doesn't work, proceed to the bottom section, "errors while unbricking")<br>
-                14. Get back into developer mode by pressing <span class="highlight">ESC + ↻ + ⏻</span>, then <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span>.<br> 
-                15. Either press <span class="highlight">CTRL + D</span> if you're on a <span style="color:white;">"OS verification is OFF"</span> white screen, or <span class="highlight">enter</span> if you're on a <span style="color:gray;">"You are in developer mode"</span> black screen. (keep this in mind if you want to stay in developer mode, you will have to do this each time you power it on)<br>
-                16. You may get a "Your system is transitioning into Developer Mode" screen, wait for the 5 minute timer to finish, then follow step 15 again to boot into ChromeOS.<br>
-                17. Start setting up your chromebook in OOBE by clicking <span class="highlight">Get Started</span>, going through WiFi, and continuing. Then prepare for the next step. <br>
-                18. When it says <span class="highlight">Enterprise Enrollement</span> boot into recovery mode <span class="highlight">(ESC + ↻ + ⏻)</span> <br>
-                19. Boot the shim<br>
-                20. Run deprovise (D), then reboot (e), boot and you should be unenrolled!<br>
-                <small>dm <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord or join <a href="https://discord.gg/Pb6qUkacpj">copernicium</a> for help with anything</small>
+                <summary><b>Experimental stuff</b></summary>
+                1. You might be able to bypass the 5 minute wait timer if you press whatever button it is that says touch .developer_mode (skip 5 min wait timer.)
             </details></p>
 
         </section>
