@@ -27,8 +27,8 @@
         </section>
         <section> 
             <h2>so, how does it work?</h2>
-            <p>The exploit works because of an issue that these chromebooks have when enrolling. If you EC reset<sup>[1]</sup> <span class="highlight">↻+⏻</span> at just the right time, it will corrupt some data in the FWMP TPM space<sup>[2]</sup>, resulting in an unreadable FWMP, meaning we can unenroll since we aren't under it's control<sup>[3]</sup> (besides WP). This allows us to boot into sh1mmer, unenroll, and fix the brick with <span class="highlight">gsctool -a -o</span></p>
-            <small>1. EC reset = the 2 keys used to forcefully restart the chromebook<br>2. FWMP TPM space = the data used by ChromeOS for enrollment related stuff<br>3. While FWMP is applied, protections are made to stop it from getting removed. These protections are from blocking debug cables to blocking resetting of the TPM (where it is stored)</small>
+            <p>The exploit works because of an issue that these chromebooks have when enrolling. If you EC reset<sup>[1]</sup> <span class="highlight">↻+⏻</span> at just the right time, it will interupt the creation process and leave you with a blank FWMP. This bricks because its unexpected for FWMP to exist but have no value. <sup>[2]</sup> This state of no FWMP means we can unenroll since we aren't under it's control<sup>[3]</sup>. This allows us to boot into sh1mmer, unenroll, and fix the brick with <span class="highlight">gsctool -a -o</span></p>
+            <small>1. EC reset = the 2 keys used to forcefully restart the chromebook<br>2. FWMP TPM space = the data used by ChromeOS for enrollment related stuff<br>3. While FWMP is applied, protections are made to stop it from getting removed. These protections are blocking dev mode, blocking debug cabels, and more which prevents unenrollment</small>
         </section>
         <section>
             <h2>how did you even find this?</h2>
@@ -63,7 +63,25 @@
                     <img src="images/chromeosismissingordamaged.jpg" style="width:30vh;height:30vh"></img>
                     <img src="images/somethingwentwrong.jpg" style="width:40vh;height:30vh"></img><br>
                     <small>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</small></center>
-                7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
+                <details><summary>7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy, view arrow for more info)<br></summary>
+                    To flash a shim you will need a secondary computer or a different way to connect a usb to a device (yes there are mobile methods if you have the correct connector)<br>
+                    1. Head to the link above (https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy)<br>
+                    2. Download the shim corresponding to your board<br>
+                    Now here's the hard part, flashing<br>
+                    4. Use one of the following pieces of software:<br>
+                    <a href='https://chromewebstore.google.com/detail/pocpnlppkickgojjlmhdmidojbmbodfm'>CRU Extension</a><br>
+                    <a href='https://rufus.ie'>Rufus</a><br>
+                    <a href='https://etcher.balena.io'>BalenaEtcher</a><br>
+                    (if your on linux you can also use dd)<br>
+                    <br>
+                    <b>this guide will use the CRU extension</b><br>
+                    5. Open CRU and click the setting icon in the top right<br>
+                    6. Select the option containing "Local file"<br>
+                    7. Select your shim in the file manager<br>
+                    8. Select your USB<br>
+                    9. Wait for it to finish flashing, when it's done you can take it out and continue<br>
+                </details>
+                
                 <small>If you don't know your board name and still went on with these steps, you can look it up by entering the model name at the bottom on a site like <a href="https://cros.tech">cros.tech</a></small><br>
                 8. Press <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span> to enable developer mode (It doesn't matter if it's blocked), and then <span class="highlight">ESC + ↻ + ⏻</span> to enter recovery mode.<br>
                 9. Plug in your shim USB<br>
@@ -93,7 +111,24 @@
                     <img src="images/chromeosismissingordamaged.jpg" style="width:30vh;height:30vh"></img>
                     <img src="images/somethingwentwrong.jpg" style="width:40vh;height:30vh"></img><br>
                     <small>if you click tab on either of these, under recovery reason it should say something about an error in the TPM</small></center>
-                7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy)<br>
+                <details><summary>7. Once bricked, get a <a href="https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy">shim</a> (this guide will be using legacy, view arrow for more info)<br></summary>
+                    To flash a shim you will need a secondary computer or a different way to connect a usb to a device (yes there are mobile methods if you have the correct connector)<br>
+                    1. Head to the link above (https://dl.darkn.bio/SH1mmer/Prebuilt/Legacy)<br>
+                    2. Download the shim corresponding to your board<br>
+                    Now here's the hard part, flashing<br>
+                    4. Use one of the following pieces of software:<br>
+                    <a href='https://chromewebstore.google.com/detail/pocpnlppkickgojjlmhdmidojbmbodfm'>CRU Extension</a><br>
+                    <a href='https://rufus.ie'>Rufus</a><br>
+                    <a href='https://etcher.balena.io'>BalenaEtcher</a><br>
+                    (if your on linux you can also use dd)<br>
+                    <br>
+                    <b>this guide will use the CRU extension</b><br>
+                    5. Open CRU and click the setting icon in the top right<br>
+                    6. Select the option containing "Local file"<br>
+                    7. Select your shim in the file manager<br>
+                    8. Select your USB<br>
+                    9. Wait for it to finish flashing, when it's done you can take it out and continue<br>
+                </details>
                 <small>If you don't know your board name and still went on with these steps, you can look it up by entering the model name at the bottom on a site like <a href="https://cros.tech">cros.tech</a></small><br>
                 8. Press <span class="highlight">CTRL + D</span>, then <span class="highlight">enter</span> to enable developer mode (It doesn't matter if it's blocked), and then <span class="highlight">ESC + ↻ + ⏻</span> to enter recovery mode.<br>
                 9. Plug in your shim USB<br>
