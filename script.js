@@ -11,7 +11,7 @@ function findTime(content) {
     const enrollmentStart = lines.find(line => line.includes('Show enrollment screen'));
     if (!enrollmentStart) {
         text.style.display = "block";
-        text.innerText = "Error (THIS IS NOT A BUG!): Could not parse for 'Show enrollment screen', please ask for support in TitaniumNetwork or copernicium";
+        text.innerText = "Error (THIS IS NOT A BUG!): Could not parse for 'Show enrollment screen', please ask for support in copernicium";
         text.style.color = "#ed8796";
         return;
     }
@@ -22,7 +22,7 @@ function findTime(content) {
     const endLine = lines.find(line => line.includes('Blocking dev mode by device policy'));
     if (!endLine) {
         text.style.display = "block";
-        text.innerText = "Error (THIS IS NOT A BUG!): Could not parse for 'Blocking dev mode by device policy', please ask for support in TitaniumNetwork or copernicium";
+        text.innerText = "Error (THIS IS NOT A BUG!): Could not parse for 'Blocking dev mode by device policy', please ask for support in copernicium";
         text.style.color = "#ed8796";
         return;
     }
