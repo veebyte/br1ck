@@ -22,7 +22,7 @@
     <main>
         <section> 
             <h2>what even is BR1CK?</h2>
-            <p>BR1CK was an exploit released October 27th, 2024. It is capable of unenrolling all devices without platform FWMP on the latest version, v130. It has a low chance of being patched without a release of a new Chromebook model.</p>
+            <p>BR1CK was an exploit released October 27th, 2024 which takes advantage of an oversight while creating FWMP in the TPM. It is capable of unenrolling all devices without platform FWMP on any version below v132. </p>
             <small>Scroll down to see if your device is compatible</small>
         </section>
         <section> 
@@ -97,7 +97,7 @@
                 18. When it says <span class="highlight">Enterprise Enrollement</span> boot into recovery mode <span class="highlight">(ESC + ↻ + ⏻)</span> <br>
                 19. Boot the shim<br>
                 20. Run deprovise (D), then reboot (e), boot and you should be unenrolled!<br>
-                <small>dm <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord or join <a href="https://discord.gg/Pb6qUkacpj">copernicium</a> for help with anything</small>
+                <small>join <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a> on discord for help with anything (MAKE SURE TO READ EVERYTHING FIRST)</small>
             </details></p>
             <p><details style="line-height:1.75;font-size:15px;">
                 <summary><b>[REALLY HARD AND LUCK BASED] For users WITHOUT chrome://network#logs</b></summary>
@@ -144,7 +144,7 @@
                 18. When it says <span class="highlight">Enterprise Enrollement</span> boot into recovery mode <span class="highlight">(ESC + ↻ + ⏻)</span> <br>
                 19. Boot the shim<br>
                 20. Run deprovise (D), then reboot (e), boot and you should be unenrolled!<br>
-                <small>dm <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord or join <a href="https://discord.gg/Pb6qUkacpj">copernicium</a> for help with anything</small>
+                <small>join <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a> on discord for help with anything (MAKE SURE TO READ EVERYTHING FIRST)</small>
             </details></p>
 
         </section>
@@ -156,7 +156,7 @@
                 2. Go to <a href="chrome://network#logs">chrome://network#logs</a><br>
                 2. Under the options section check all of the boxes. <br> <small>You can just select the bottom 2 options if you care.</small><br>
                 3. Place the <span class="highlight">combined-logs.tar.gz</span> file into the dropzone below. <br>
-                <small>IF YOU SEE "Could not parse for 'Show enrollment screen" PLEASE CHECK THE ERRORS SECTION. IF ISSUES PERSIST, PLEASE DM <a href="https://discord.com/users/1209096766075703368">@appleflyer</a> FOR THIS (other issues go to byte).</small>
+                <small>If you experience an error ask for help in <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a> </small>
                 <br>
                 4. The reset timing will appear below the dropzone <br>
             </p>
@@ -174,7 +174,7 @@
             <div id="reset-text"></div>
             <script src="script.js"></script> <!-- do not shift the script src. this is to ensure the elements above have loaded first. -->
             <p>
-            <span style="color: #ed8796;">Please report bugs to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span></p>
+            <span style="color: #ed8796;">Please report bugs to <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a> on discord</span></p>
         </section>
         <section>
             <h2>errors</h2>
@@ -209,7 +209,7 @@
                 <p>
                     make sure you've done steps 17-20
                     1. stay in dev mode (DON'T LEAVE OR U MIGHT BE COOKED!)\n
-                    2. contact byte for help lol
+                    2. join <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a> for help lol
                 </p>
             </details>
             <details>
@@ -219,13 +219,13 @@
                         <source src="images/IMG_3168.mov" type="video/mp4"></video>
                 </p>
             </details>
-            <span style="color: #ed8796;">if these don't work, please report the error to <a href="https://discord.com/users/758049822409228348">@ubyte</a> on discord</span>
+            <span style="color: #ed8796;">if these don't work, please report the error to <a href="https://discord.gg/Pb6qUkacpj">Copernicium</a> on discord</span>
         </section>
         <br>
         <footer>
             <h3>Credits:</h3>
             <p>
-                <strong><a href="https://discord.com/users/758049822409228348">byte</a></strong> - Pioneering the development of this, making the website (this is my first one so don't judge), and coming up with the log consistency idea.<br>
+                <strong><a href="https://discord.com/users/758049822409228348">byte</a></strong> - Pioneering the development of this, finding the original bug, and coming up with the log consistency idea, and creating the majority of the website.<br>
                 <strong><a href="https://discord.com/users/476169716998733834">OlyB</a></strong> - Found out when we were supposed to restart, all we had left was figuring out when that was.<br>
                 <strong><a href="https://discord.com/users/828015910127271986">silk</a></strong> - Reproducing the bug first and confirming I wasn't insane<br>
                 <strong><a href="https://discord.com/users/829745505784692776">darkn</a></strong> - Providing shims (dl.darkn.bio)<br>
