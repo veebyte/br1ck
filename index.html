@@ -28,7 +28,7 @@
         <section> 
             <h2>so, how does it work?</h2>
             <p>The exploit works because of an issue that these chromebooks have when enrolling. If you EC reset<sup>[1]</sup> <span class="highlight">↻+⏻</span> at just the right time, it will interupt the creation process and leave you with a blank FWMP. This bricks because its unexpected for FWMP to exist but have no value. <sup>[2]</sup> This state of no FWMP means we can unenroll since we aren't under it's control<sup>[3]</sup>. This allows us to boot into sh1mmer, unenroll, and fix the brick with <span class="highlight">gsctool -a -o</span></p>
-            <small>1. EC reset = the 2 keys used to forcefully restart the chromebook<br>2. FWMP TPM space = the data used by ChromeOS for enrollment related stuff<br>3. While FWMP is applied, protections are made to stop it from getting removed. These protections are blocking dev mode, blocking debug cabels, and more which prevents unenrollment</small>
+            <small>1. EC reset = the 2 keys used to forcefully restart the chromebook<br>2. FWMP TPM space = the data used by ChromeOS for enrollment related stuff<br>3. While FWMP is applied, protections are made to stop it from getting removed. These protections are blocking dev mode, blocking debug cables, and more which prevents unenrollment</small>
         </section>
         <section>
             <h2>how did you even find this?</h2>
